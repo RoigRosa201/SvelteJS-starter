@@ -9,6 +9,14 @@
 	$: uppercaseName = name.toUpperCase();
 		// labeled statment and dynamic recalculation
 	
+	$: console.log(name);
+
+	$: if (name === 'Roig') {
+		console.log('it runs!');
+		age = 29;
+	}
+
+
 	
 	function incrementAge() {
 		age += 1;
@@ -20,6 +28,13 @@
 
 	}
 
+	function nameInput(event){
+
+		const enteredValue = event.target.value;
+		name = enteredValue;
+
+
+	}
 </script>
 
 <style>
@@ -34,3 +49,5 @@
 <button on:click="{changeName}">Change Name</button>
 
 <!-- Quotation marks are not required above, they are for helping to highlight syntax. -->
+
+<input type="text" value="{name}"on:input={nameInput}>
