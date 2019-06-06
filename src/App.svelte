@@ -1,6 +1,8 @@
 <script>
 	// export let name;
 	// export let age;
+	import ContactCard from './ContactCard.svelte';
+	
 	let name = 'Roig';
 	let age = 29
 
@@ -50,4 +52,10 @@
 
 <!-- Quotation marks are not required above, they are for helping to highlight syntax. -->
 
-<input type="text" value="{name}"on:input={nameInput}>
+<!-- <input type="text" value="{name}"on:input={nameInput} /> -->
+
+<input type="text" bind:value={name} />
+
+<!-- Short cut from the longer form above convenient for form and text input. Can theoretically bind any if most HTML props
+don't overuse  -->
+<ContactCard />
